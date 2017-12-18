@@ -17,10 +17,11 @@
  '(global-auto-revert-mode t)
  '(global-font-lock-mode t)
  '(global-linum-mode t)
+ '(indent-tabs-mode nil)
+ '(make-backup-files nil)
+ '(package-selected-packages (quote (use-package)))
  '(prefer-coding-system (quote utf-8))
  '(show-paren-delay 0)
- '(make-backup-files nil)
- '(indent-tabs-mode nil)
  '(show-paren-mode t))
 
 (custom-set-faces
@@ -33,5 +34,13 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("gnu"   . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
