@@ -2,6 +2,20 @@
 ;; Author: Jair Revilla <jair.revilla@gmail.com>
 ;; Keywords: Emacs, dotfile, config
 
+;;; Commentary:
+;;  Citations
+;;
+;;     "Show me your ~/.emacs and I will tell you who you are."
+;;                                                         [Bogdan Maryniuk]
+;;
+;;     "Emacs is like a laser guided missile.  It only has to be slightly
+;;      mis-configured to ruin your whole day."
+;;                                                            [Sean McGrath]
+;;
+;;     "While any text editor can save your files, only Emacs can save your
+;;      soul."
+;;                                                          [Per Abrahamsen]
+
 ;;; Code:
 ;; This file is only provided as an example. Customize it to your own taste!
 
@@ -13,13 +27,12 @@
  '(column-number-mode t)
  '(delete-selection-mode t)
  '(fill-column 80)
- '(flycheck-highlighting-mode (quote symbols))
  '(global-auto-revert-mode t)
  '(global-font-lock-mode t)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(package-selected-packages (quote (use-package)))
+ '(package-selected-packages (quote (flycheck use-package)))
  '(prefer-coding-system (quote utf-8))
  '(show-paren-delay 0)
  '(show-paren-mode t))
@@ -44,3 +57,10 @@
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/lang" user-emacs-directory))
+
+(use-package init-flycheck)
+
+;;; init.el ends here
