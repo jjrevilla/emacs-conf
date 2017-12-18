@@ -25,6 +25,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-enabled-themes (quote (misterioso)))
  '(delete-selection-mode t)
  '(fill-column 80)
  '(global-auto-revert-mode t)
@@ -32,7 +33,9 @@
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(package-selected-packages (quote (flycheck use-package)))
+ '(package-selected-packages
+   (quote
+    (flycheck use-package)))
  '(prefer-coding-system (quote utf-8))
  '(show-paren-delay 0)
  '(show-paren-mode t))
@@ -62,5 +65,6 @@
 (add-to-list 'load-path (expand-file-name "lisp/lang" user-emacs-directory))
 
 (use-package init-flycheck)
+;;(use-package init-themes)
 
 ;;; init.el ends here
