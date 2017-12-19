@@ -16,6 +16,14 @@
     (require 'smartparens-config)
     (smartparens-global-mode 1)))
 
+(use-package indent-guide
+  :ensure t
+  :pin melpa
+  :config
+  (progn
+    (require 'indent-guide)
+    (indent-guide-global-mode 1)))
+
 (provide 'init-utils)
 
 ;;; init-utils ends here

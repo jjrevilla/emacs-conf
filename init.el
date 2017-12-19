@@ -34,7 +34,9 @@
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(package-selected-packages (quote (smartparens smartparents flycheck use-package)))
+ '(package-selected-packages
+   (quote
+    (indent-guide smartparens smartparents flycheck use-package)))
  '(prefer-coding-system (quote utf-8))
  '(show-paren-delay 0)
  '(show-paren-mode t))
