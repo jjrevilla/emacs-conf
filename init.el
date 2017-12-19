@@ -28,14 +28,13 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(delete-selection-mode t)
  '(fill-column 80)
+ '(flycheck-highlighting-mode (quote symbols))
  '(global-auto-revert-mode t)
  '(global-font-lock-mode t)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(package-selected-packages
-   (quote
-    (flycheck use-package)))
+ '(package-selected-packages (quote (smartparens smartparents flycheck use-package)))
  '(prefer-coding-system (quote utf-8))
  '(show-paren-delay 0)
  '(show-paren-mode t))
@@ -45,7 +44,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 90 :width normal)))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 90 :width normal))))
+ '(flycheck-error ((t (:background "red1" :foreground "white"))))
+ '(flycheck-info ((t (:background "forest green" :foreground "white"))))
+ '(flycheck-warning ((t (:background "dark orange" :foreground "white")))))
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -65,6 +67,7 @@
 (add-to-list 'load-path (expand-file-name "lisp/lang" user-emacs-directory))
 
 (use-package init-flycheck)
+(use-package init-utils)
 ;;(use-package init-themes)
 
 ;;; init.el ends here
